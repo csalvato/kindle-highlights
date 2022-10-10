@@ -70,7 +70,7 @@ end
 task :default do
   mail = Mail.new do
     from    'Kindle Highlights <kindle@sandbox.mgsend.net>'
-    subject "#{Time.now.strftime("%b %d")} Highlights"
+    subject "#{Time.now.getlocal('-07:00').strftime("%b %d")} Highlights"
     to ENV['AMAZON_USERNAME']
     html_part do
       content_type 'text/html; charset=UTF-8'
