@@ -1,3 +1,5 @@
+require 'dotenv/load'
+require 'dotenv/tasks'
 require 'kindle_highlights'
 require 'mail'
 
@@ -63,11 +65,11 @@ class HighlightsFetcher
   end
 end
 
-task :print do
+task print: :dotenv do
   puts HighlightsFetcher.new.fetch
 end
 
-task :default do
+task default: :dotenv do
   mail = Mail.new do
     from    'Kindle Highlights <kindle@sandbox.mgsend.net>'
     subject "#{Time.now.getlocal('-07:00').strftime("%b %d")} Highlights"

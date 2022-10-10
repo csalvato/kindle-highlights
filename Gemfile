@@ -8,3 +8,4 @@ gem "kindle-highlights"
 gem "mail"
 gem "rake", require: false
 gem 'net-smtp', require: false
+gem "dotenv"
