@@ -3,10 +3,10 @@ require 'mail'
 
 Mail.defaults do
   delivery_method :smtp,
-    address:              ENV['MAILGUN_SMTP_SERVER'],
-    port:                 ENV['MAILGUN_SMTP_PORT'],
-    user_name:            ENV['MAILGUN_SMTP_LOGIN'],
-    password:             ENV['MAILGUN_SMTP_PASSWORD'],
+    address:              ENV['SMTP_SERVER'],
+    port:                 ENV['SMTP_PORT'],
+    user_name:            ENV['SMTP_LOGIN'],
+    password:             ENV['SMTP_PASSWORD'],
     to:                   ENV['AMAZON_USERNAME'],
     authentication:       'plain',
     enable_starttls_auto: true
@@ -83,4 +83,3 @@ task :default do
 
   puts "OK, sent email"
 end
-
